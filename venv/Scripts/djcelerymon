@@ -1,0 +1,8 @@
+#!C:\Users\ridva\OneDrive\Masaüstü\PythonFinance\venv\Scripts\python.exe
+from djcelery import mon
+
+def main():
+    mon.main()
+
+if __name__ == "__main__":
+    main()

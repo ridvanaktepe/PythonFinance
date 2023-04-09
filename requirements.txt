@@ -1,0 +1,12 @@
+django>=4.2
+djangorestframework
+django-cors-headers
+pyyaml
+requests
+psycopg2
+celery
+django-celery
+django-celery-beat
+django-celery-results
+redis
+drf_yasg

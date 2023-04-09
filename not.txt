@@ -1,0 +1,18 @@
+*****   Required Code   *****                                          *******   Explanations   ********
+
+.\activate                                                              The code required to activate the virtual environment. Before using, enter the file into venv/Script from the terminal.
+
+pip install -r requirements.txt                                         Required libraries are written in requirements.txt. By running this code, the necessary libraries can be loaded.
+
+python manage.py createsuperuser                                        Required code to create user in django admin panel.
+
+python manage.py makemigrations PythonFinance                           The code required to create the migration.
+python manage.py migrate                                                The code required for the database processing of the migration.
+
+python manage.py runserver                                              Enter the code in a separate terminal to run the api.
+celery -A PythonFinance.celery worker --pool=solo -l info               Run the required worker in a separate terminal to get the data from the bitexen api and register to postgresql asynchronously.
+celery -A PythonFinance beat -l info                                    Enter the code in a separate terminal to trigger every 5 seconds.
+                                                                        Note: Redis was used as the broker in this application.
+
+http://127.0.0.1:8000/api/v1/swagger/schema/                            Swagger document link
+http://127.0.0.1:8000                                                   You can get statistics values with post request from api.
